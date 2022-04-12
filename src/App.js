@@ -13,6 +13,10 @@ const rotate = keyframes`
 }
 `;
 
+const Emoji = styled.span`
+  font-size: 50px;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -28,13 +32,9 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  span {
-    font-size: 50px;
+  ${Emoji} {
     &:hover {
       font-size: 100px;
-    }
-    &:active {
-      opacity: 0;
     }
   }
 `;
@@ -42,7 +42,7 @@ const Box = styled.div`
 const App = () => (
   <Wrapper>
     <Box>
-      <span>💛</span>
+      <Emoji as="p">💛</Emoji>
     </Box>
   </Wrapper>
 );
