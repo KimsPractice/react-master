@@ -1,9 +1,9 @@
-import Circle from "./Circle"
+import Circle from "./Circle";
 
 const App = () => (
   <div>
-    <Circle bgColor="teal"/>
-    <Circle bgColor="tomato"/>
+    <Circle borderColor="black" bgColor="teal" />
+    <Circle text="hello world" bgColor="tomato" />
   </div>
 );
 
