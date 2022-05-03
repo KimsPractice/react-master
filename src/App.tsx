@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Router from "./Router";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.bgColor};
@@ -11,9 +12,7 @@ const H1 = styled.h1`
 const App = () => {
   return (
     <div>
-      <Container>
-        <H1>Protected</H1>
-      </Container>
+      <Router></Router>
     </div>
   );
 };
