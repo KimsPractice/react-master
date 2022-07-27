@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding: 0 10px;
+  padding: 0 20px;
+  max-width: 450px;
+  margin: 0 auto;
 `;
 
 const Header = styled.header`
@@ -13,30 +15,27 @@ const Header = styled.header`
   align-items: center;
 `;
 
-const ConinsList = styled.ul``;
+const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   background-color: white;
-  color: ${(props) => props.theme.textColor};
+  color: ${(props) => props.theme.bgColor};
   padding: 20px;
-  border-radius: 15px;
   margin-bottom: 10px;
+  border-radius: 15px;
   a {
+    transition: color 0.2s ease-in;
     display: flex;
     align-items: center;
-    padding: 20px;
-    transition: color 0.2s ease-in;
   }
-
   &:hover {
     a {
-      color: ${(props) => props.theme.bgColor};
+      color: ${(props) => props.theme.accentColor};
     }
   }
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
   color: ${(props) => props.theme.accentColor};
 `;
 
@@ -44,10 +43,10 @@ const Loader = styled.div`
   text-align: center;
 `;
 
-const Img = styled.img`
-  width: 35px;
-  height: 35px;
-  margin-right: 10px;
+const Image = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
 `;
 
 interface CoinInterface {
@@ -79,18 +78,18 @@ const Coins = () => {
       {loading ? (
         <Loader>loading...</Loader>
       ) : (
-        <ConinsList>
+        <CoinsList>
           {coins.map((coin) => (
             <Coin key={coin.id}>
               <Link to={`/${coin.id}`} state={{ name: coin.name }}>
-                <Img
+                <Image
                   src={`https://cryptocurrencyliveprices.com/img/${coin.id}.png`}
                 />
                 {coin.name} &rarr;
               </Link>
             </Coin>
           ))}
-        </ConinsList>
+        </CoinsList>
       )}
     </Container>
   );
