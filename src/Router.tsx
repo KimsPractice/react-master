@@ -8,8 +8,8 @@ const Router = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/:coinId" element={<Coin />}>
-        <Route path={`price`} element={<Price />} />
-        <Route path={`chart`} element={<Chart />} />
+        <Route path={"price"} element={<Price />} />
+        <Route path={"chart"} element={<Chart />} />
       </Route>
       <Route path="/" element={<Coins />}></Route>
     </Routes>
